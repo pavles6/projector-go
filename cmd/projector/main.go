@@ -14,5 +14,11 @@ func main() {
 		log.Fatalf("Unable to get options %v\n", err)
 	}
 
-	fmt.Printf("%+v", opts)
+	config, err := projector.NewConfig(opts)
+
+	if err != nil {
+		log.Fatalf("unable to get config %v", err)
+	}
+
+	fmt.Printf("opts: %+v", config)
 }
